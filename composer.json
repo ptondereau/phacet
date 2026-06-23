@@ -1,0 +1,34 @@
+{
+    "name": "ptondereau/phacet",
+    "description": "Layered configuration hydrated into a typed object through reflection",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "suggest": {
+        "psr/cache": "Cache the reflection plan to skip introspection on every run"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHacet\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHacet\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "mago lint",
+        "analyse": "mago analyze",
+        "format": "mago format"
+    }
+}

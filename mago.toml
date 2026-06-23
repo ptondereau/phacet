@@ -1,0 +1,37 @@
+php-version = "8.3"
+
+[source]
+paths = ["src", "tests"]
+includes = ["vendor"]
+extensions = ["php"]
+
+[linter]
+integrations = ["phpunit"]
+
+[linter.rules]
+literal-named-argument = { enabled = false }
+no-insecure-comparison = { enabled = false }
+sensitive-parameter = { enabled = false }
+no-isset = { enabled = false }
+no-literal-password = { enabled = false }
+excessive-parameter-list = { enabled = false }
+kan-defect = { enabled = false }
+halstead = { enabled = false }
+cyclomatic-complexity = { threshold = 30, exclude = ["src/Source/ArgvParser.php"] }
+
+[formatter]
+preset = "psr-12"
+print-width = 120
+single-quote = true
+trailing-comma = true
+sort-uses = true
+
+[analyzer]
+find-unused-definitions = true
+find-unused-expressions = true
+ignore = [
+    "mixed-assignment",
+    "possibly-static-access-on-interface",
+    "invalid-type-cast",
+    { code = "unknown-class-instantiation", in = "src/Hydrator.php" },
+]
